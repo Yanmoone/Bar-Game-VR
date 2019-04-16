@@ -9,7 +9,7 @@ public class Mixing : MonoBehaviour
 
     [SerializeField]
     [Range(0,1)]
-    private float _maxSize = 0.9f;
+    private float _maxSize = 0.8f;
 
     [SerializeField]
     private float _capacity = 20;
@@ -38,7 +38,6 @@ public class Mixing : MonoBehaviour
         _color = ((_color * _liquidCount) + liquid._color) / (_liquidCount + 1);
         _material.color = _color;
         _water.transform.localScale += new Vector3(0, _maxSize/_capacity, 0);
-        Debug.Log(_water.transform.position);
-        _water.transform.position += new Vector3(0, (_maxSize / _capacity)/2, 0);
+        _water.transform.position += new Vector3(0, (_maxSize/_capacity)/2, 0);
     }
 }
